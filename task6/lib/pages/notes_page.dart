@@ -68,6 +68,11 @@ class _NotesPageState extends State<NotesPage> {
                     itemCount: _notes.length,
                     itemBuilder: (context, i) {
                       return ListTile(
+                        onTap: () {
+                          setState(() {
+                            _notes.removeAt(i);
+                          });
+                        },
                         title: Text(_notes[i]),
                       );
                     },
